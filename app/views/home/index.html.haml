@@ -1,0 +1,20 @@
+%header.container-fluid
+  .row-fluid
+    .span12
+      %h1 GitHub Markup Preview
+      .select-holder
+        = select_tag 'type', options_for_select(@types)
+      .btn-group
+        %button#50-50.btn.active 50 - 50
+        %button#exact.btn Exact size
+#main-container
+  #left.part
+    .content
+      %textarea
+        = @markup
+  #right.part
+    #preview.content
+      = raw @content
+
+%footer
+  = link_to 'Dmitry Filimonov © 2012', 'http://dfilimonov.com/'

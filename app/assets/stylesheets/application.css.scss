@@ -1,0 +1,119 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require bootstrap.min
+ *= require_self
+ *= require_tree .
+ */
+@mixin user-select($val){
+  -moz-user-select: val;  
+  -webkit-user-select: val;  
+  -ms-user-select: val;  
+  user-select: val;
+}
+
+html,body{
+  height:100%;
+  overflow:hidden;
+}
+header{
+  @include user-select(none);
+  background:#333;
+  box-shadow:0 2px 6px rgba(125,125,125,0.35);
+  color:#fff;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:100;
+  width:100%;
+  height:60px;
+  .row-fluid, .span6, .btn-group, .select-holder, h1{
+    display:inline-block;
+    height:60px;
+    line-height:60px;
+    float:left;
+  }
+  select{
+    margin:0;
+    margin-left:25px;
+    height:22px;
+    width:120px;
+    /*background:#333;
+    border: 1px solid #111;
+    color:#fff;*/
+  }:focus {
+    outline: none;
+  }
+  .btn-group{
+    margin-left:25px;
+    display:inline-block;
+    *{
+      height:22px;
+      padding:2px 10px;
+      margin-top:20px;
+    }
+  }
+
+}
+
+#main-container{
+  height:100%;
+  .part{
+    width:49.9999%;
+    height:100%;
+    float:left;
+  }
+  #left{
+    .content{
+      margin:60px 0 0 0;
+      textarea{
+        @include user-select(text);
+        resize: none;
+        
+        font-family:Consolas,Menlo,"Liberation Mono",Courier,monospace;
+        border:none;
+        border-radius:0;
+        overflow-y:scroll;
+        padding:17px;
+        background:#272822;
+        color:#fff;
+
+        background:#fff;
+        color:#111;
+      }
+    }
+  }
+  #right{
+    background:#fff;
+    right:0;
+    border-left:1px solid #aaa;
+    .content{
+      margin-top:60px;
+      padding:15px 20px 20px 20px;
+      overflow-y:scroll;
+    }
+  }
+}
+
+.ribbon{
+  z-index:1000;
+}
+
+footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  padding:15px 20px;
+  z-index:500;
+  a{
+    color:#333;
+  }
+}
+
