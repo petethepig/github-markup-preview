@@ -1,6 +1,5 @@
 require 'github/markup'
 class HomeController < ApplicationController
-  
   @@types = {:rdoc=>'rdoc', :markdown => 'md', :textile=>'textile', :mediawiki=>'wiki', :org=>'org', :creole=>'creole'}
   
   def index

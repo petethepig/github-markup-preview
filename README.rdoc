@@ -2,9 +2,11 @@
 
 I know you've been missing it - simple tool that allows you to preview your README files before committing them.
 
+Take a look at the demo here[http://dfilimonov.com/github-markup-preview].
+
 This preview on the right side looks exactly the same as it would look like on GitHub.
 
-Press *F5*. Your markup stays here until you close the browser tab. Isn't that great?
+Refresh the page. Your markup stays here until you close the browser tab. Isn't that great?
 
 Supported formats are:
 * rdoc
@@ -13,9 +15,6 @@ Supported formats are:
 * wiki
 * org
 * creole
-
-==== Where do I get the source code?
-Check the GitHub repo here: https://github.com/petethepig/github-markup-preview
 
 ==== I want to contibute
 Contact me on GitHub[https://github.com/petethepig/] 
