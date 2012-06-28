@@ -16,7 +16,7 @@ Supported formats are:
 * org
 * creole
 
-==== I want to contibute
+==== I want to contribute
 Contact me on GitHub[https://github.com/petethepig/] 
 
 ==== Thanks To

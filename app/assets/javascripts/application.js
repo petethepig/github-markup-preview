@@ -69,7 +69,7 @@ var MarkupPreview=(function(){
         
         $.ajax({
             type: "POST",
-            url:    "/render",
+            url:    "./render",
             data: {
                 type: $("#type").val(),
                 content: lastUpdate
@@ -100,7 +100,7 @@ var MarkupPreview=(function(){
                 $("textarea").val(StorageManager.get("data"));
             }else{ //first time visit
                 $.ajax({
-                    url: "/readme",
+                    url: "./readme",
                 }).success(function(data){
                     $("textarea").val(data);
                     resizeHandler();
