@@ -41,8 +41,10 @@ header{
     float:left;
   }
   select{
+    position:absolute;
+    top:20px;
+    left:390px;
     margin:0;
-    margin-left:25px;
     height:22px;
     width:120px;
     padding:0;
@@ -53,12 +55,13 @@ header{
     outline: none;
   }
   .btn-group{
-    margin-left:25px;
+    position:absolute;
+    top:20px;
+    left:540px;
     display:inline-block;
     *{
       height:22px;
-      padding:2px 10px;
-      margin-top:20px;
+      padding:1px 10px 3px 10px;
     }
   }
 
@@ -69,9 +72,11 @@ header{
   .part{
     width:49.9999%;
     height:100%;
-    float:left;
+    position:absolute;
   }
   #left{
+    z-index:10;
+    border-right:1px solid #aaa;
     .content{
       margin:60px 0 0 0;
       textarea{
@@ -88,13 +93,15 @@ header{
 
         background:#fff;
         color:#111;
+      }:focus {
+        outline: none;
       }
     }
   }
   #right{
+    z-index:9;
     background:#fff;
     right:0;
-    border-left:1px solid #aaa;
     .content{
       margin-top:60px;
       padding:15px 20px 20px 20px;
