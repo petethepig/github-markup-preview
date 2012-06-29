@@ -1,4 +1,4 @@
-= Hello. This is the *GitHub* *Markup* *Preview*.
+= Hello. This is the GitHub Markup Preview.
 
 I know you've been missing it - simple tool that allows you to preview your README files before committing them.
 
@@ -19,8 +19,8 @@ Supported formats are:
 ==== I want to contribute
 Contact me on GitHub[https://github.com/petethepig/] 
 
-==== Thanks To
-{GitHub Markup developers}[https://github.com/github/markup/] - this application is totally depends on their library.
+==== Thanks to
+{GitHub Markup developers}[https://github.com/github/markup/] - this application totally depends on their library.
 
-==== Lisence
+==== License
 MIT License - fork, modify and use however you want.
