@@ -16,24 +16,27 @@
 
 var StorageManager = (function(){
     var _storage = window.sessionStorage;
+    function support(){
+        return (typeof _storage != "undefined");
+    }
     return {
-        support:function(){
-            return (typeof _storage != "undefined");
-        },
         save:function(key,value){
+            if(support())
             _storage[key]=value;
         },
         get:function(key){
+            if(!support())return null;
             return _storage[key];
         },
         has:function(key){
+            if(!support())return false;
             return _storage[key]?true:false;
         }
     }
 })();
 
 var MarkupPreview=(function(){
-    var lastUpdate = null;
+    var lastMarkup = null;
     var lastFormat = null;
     var lastLayout = null;
     var delay = 1000;
@@ -57,14 +60,14 @@ var MarkupPreview=(function(){
 
         var latest = $("textarea").val();
         var type = $("#type").val();
-        if(latest==lastUpdate&&lastType == type){
+        if(latest==lastMarkup&&lastType == type){
             timeout = setTimeout(update,delay);
             return;
         }
 
-        lastUpdate = latest;
+        lastMarkup = latest;
         lastType = type;
-        StorageManager.save("data",lastUpdate);
+        StorageManager.save("data",lastMarkup);
         StorageManager.save("type",lastType);
         
         $.ajax({
@@ -72,7 +75,7 @@ var MarkupPreview=(function(){
             url:    "./render",
             data: {
                 type: $("#type").val(),
-                content: lastUpdate
+                markup: lastMarkup
             }
         }).success(function(data){
             $("#right .content").html(data);
@@ -100,7 +103,7 @@ var MarkupPreview=(function(){
                 $("textarea").val(StorageManager.get("data"));
             }else{ //first time visit
                 $.ajax({
-                    url: "./readme",
+                    url: "./example.rdoc",
                 }).success(function(data){
                     $("textarea").val(data);
                     resizeHandler();
@@ -123,8 +126,7 @@ var MarkupPreview=(function(){
 
 })();
 
-
-
 $(document).ready(function(){
     MarkupPreview.init();
 })
+

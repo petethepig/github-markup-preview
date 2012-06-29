@@ -4,21 +4,17 @@ class HomeController < ApplicationController
   
   def index
     @markup = "" #File.read("README.rdoc")
-    @content = "" #render_data :rdoc, @markup
+    @preview = "" #render_markup :rdoc, @markup
     @types = @@types.keys
   end
 
   def renderr
     type = params[:type] || 'rdoc'
-    render :text => render_data(type.to_sym, params[:content])
-  end
-
-  def readme
-    render :text => File.read("README.rdoc")
+    render :text => render_markup(type.to_sym, params[:markup])
   end
 
   private
-    def render_data type, data
+    def render_markup type, data
       filename = "no-file.#{@@types[type]}"
       logger.info filename
       GitHub::Markup.render(filename, data)
