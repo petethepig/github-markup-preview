@@ -1,0 +1,21 @@
+gfm:
+  ext:  'md'
+  name: 'Github Flavored Markdown' 
+markdown:
+  ext:  'md'
+  name: 'Simple Markdown'
+rdoc:
+  ext:  'rdoc'
+  name: 'RDoc'
+textile:
+  ext:  'textile'
+  name: 'Textile'
+mediawiki:
+  ext:  'wiki'
+  name: 'MediaWiki'
+org:
+  ext:  'org'
+  name: 'Org'
+creole:
+  ext:  'creole'
+  name: 'Creole'

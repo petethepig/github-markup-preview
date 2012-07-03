@@ -11,20 +11,21 @@
  *= require bootstrap.min
  *= require_self
  *= require_tree .
+ *= require gollum
  */
 @mixin user-select($val){
-  -moz-user-select: val;  
-  -webkit-user-select: val;  
-  -ms-user-select: val;  
-  user-select: val;
+  -moz-user-select: $val;  
+  -webkit-user-select: $val;  
+  -ms-user-select: $val;  
+  user-select: $val;
 }
 
 html,body{
   height:100%;
   overflow:hidden;
+  @include user-select(none);
 }
 header{
-  @include user-select(none);
   background:#333;
   box-shadow:0 2px 6px rgba(125,125,125,0.35);
   color:#fff;
@@ -46,7 +47,7 @@ header{
     left:390px;
     margin:0;
     height:22px;
-    width:120px;
+    width:190px;
     padding:0;
     /*background:#333;
     border: 1px solid #111;
@@ -57,7 +58,7 @@ header{
   .btn-group{
     position:absolute;
     top:20px;
-    left:540px;
+    left:610px;
     display:inline-block;
     *{
       height:22px;
@@ -82,7 +83,11 @@ header{
       textarea{
         @include user-select(text);
         resize: none;
-        
+
+        -webkit-box-shadow:none;
+        -moz-box-shadow:none;
+        box-shadow:none;
+
         font-family:Consolas,Menlo,"Liberation Mono",Courier,monospace;
         border:none;
         border-radius:0;
@@ -90,11 +95,8 @@ header{
         padding:17px;
         background:#272822;
         color:#fff;
-
         background:#fff;
         color:#111;
-      }:focus {
-        outline: none;
       }
     }
   }

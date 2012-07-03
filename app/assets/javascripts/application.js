@@ -103,7 +103,7 @@ var MarkupPreview=(function(){
                 $("textarea").val(StorageManager.get("data"));
             }else{ //first time visit
                 $.ajax({
-                    url: "./example.rdoc",
+                    url: "./example.md",
                 }).success(function(data){
                     $("textarea").val(data);
                     resizeHandler();
