@@ -2,7 +2,7 @@
 
 I know you've been missing it - simple tool that allows you to edit and instantly preview your README files before committing them.
 
-Take a look at the demo here[http://dfilimonov.com/github-markup-preview].
+Take a look at the demo [here](http://dfilimonov.com/github-markup-preview).
 
 This preview on the right side looks exactly the same as it would look like on GitHub.
 
