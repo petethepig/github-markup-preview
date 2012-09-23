@@ -5,3 +5,6 @@
 ._DS_Store
 *.local
 Capfile
+public/assets
+public/css
+public/js
