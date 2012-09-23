@@ -34,7 +34,8 @@ module Preview
 
 
     assets {
-
+      serve './assets',:from=>'app/js'
+      serve './assets', :from=>'app/css'
       js :application, './assets/application.js', [
           '/js/vendor/*','/js/application.js'
         ]
