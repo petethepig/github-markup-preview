@@ -1,7 +1,5 @@
-#!/usr/bin/env rake
-# Add your own tasks in files placed in lib/tasks ending in .rake,
-# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+# Rakefile
+APP_FILE  = 'app.rb'
+APP_CLASS = 'Preview'
 
-require File.expand_path('../config/application', __FILE__)
-
-GitHubMarkupPreview::Application.load_tasks
+require 'sinatra/assetpack/rake'

@@ -1,18 +1,3 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
-// listed below.
-//
-// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
-// or vendor/assets/javascripts of plugins, if any, can be referenced here using a relative path.
-//
-// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
-// the compiled file.
-//
-// WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
-// GO AFTER THE REQUIRES BELOW.
-//
-//= require jquery
-//= require jquery_ujs
-//= require_tree .
 
 var StorageManager = (function(){
     var _storage = window.sessionStorage;
@@ -45,8 +30,8 @@ var MarkupPreview=(function(){
 
     function resizeHandler(){
         if(lastLayout=="exact"){
-            $("#right").css("width","852px");
-            $("#left").css("width",($(document).width()-852-1)+"px");
+            $("#right").css("width","907px");
+            $("#left").css("width",($(document).width()-907-1)+"px");
         }else{
             $(".part").css("width","49.9999%");
         }
@@ -111,7 +96,14 @@ var MarkupPreview=(function(){
                 });
             }
             if(StorageManager.has("type")){
-                $("#type :contains('"+StorageManager.get("type")+"')").attr("selected","selected");
+                console.log(StorageManager.get('type'));
+                $("#type").children("option").removeAttr("selected")
+                $("#type").children("option").each(function(){
+                    if($(this).val()==StorageManager.get("type")){
+                        $(this).attr("selected","selected");
+                    }
+                });
+                update();
             }
             if(StorageManager.has("layout")){
                 $("#"+StorageManager.get("layout")).trigger("click")

@@ -1,4 +1,7 @@
-# This file is used by Rack-based servers to start the application.
+require ::File.dirname(__FILE__) + '/app'
 
-require ::File.expand_path('../config/environment',  __FILE__)
-run GitHubMarkupPreview::Application
+
+set :run, false
+set :environment, :production
+
+run Preview::App
