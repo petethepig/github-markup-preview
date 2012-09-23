@@ -32,11 +32,11 @@ module Preview
     register Sinatra::AssetPack
 
     assets {
-      js :application, './application.js', [
+      js :application, './assets/application.js', [
           '/js/vendor/*','/js/application.js'
         ]
 
-      css :application, './application.css', [
+      css :application, './assets/application.css', [
         '/css/vendor/*','/css/*'
       ]
     }
