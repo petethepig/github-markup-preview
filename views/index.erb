@@ -2,8 +2,8 @@
 <html>
 <head>
 <title>GitHub Markup Preview</title>
-<%= css :application %>
-<%= js :application %>
+<%= (css :application).gsub /\/assets/, url('/')+'assets' %>
+<%= (js :application).gsub /\/assets/, url('/')+'assets' %>
 <meta content="authenticity_token" name="csrf-param" />
 <meta content="q/nHTwVUAkAkMDQZkFbE89HNqFJTVek2zlGhibbUL34=" name="csrf-token" />
 <meta content='Preview for md, rdoc, wiki, textile, org and creole files. Best for GitHub README files.' name='description'>
