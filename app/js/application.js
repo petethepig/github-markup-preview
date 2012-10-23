@@ -75,7 +75,7 @@ var MarkupPreview=(function(){
             if(window.location.hash=="#wp"){
                 window.example_url ='wp-example.txt'; 
                 window.markup_type ='wp';
-                window.location.hash = '';
+                //window.location.hash = '';
             }
             $("header .btn-group .btn").click(function(){
                 $("button.active").removeClass("active");
