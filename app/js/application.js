@@ -88,7 +88,7 @@ var MarkupPreview=(function(){
                 $("textarea").val(StorageManager.get("data"));
             }else{ //first time visit
                 $.ajax({
-                    url: "./example.md",
+                    url: window.example_url || "./example.md",
                 }).success(function(data){
                     $("textarea").val(data);
                     resizeHandler();
@@ -104,6 +104,12 @@ var MarkupPreview=(function(){
                     }
                 });
                 update();
+            }else{
+                $("#type").children("option").each(function(){
+                    if($(this).val()==window.markup_type){
+                        $(this).attr("selected","selected");
+                    }
+                });
             }
             if(StorageManager.has("layout")){
                 $("#"+StorageManager.get("layout")).trigger("click")

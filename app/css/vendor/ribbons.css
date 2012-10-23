@@ -21,7 +21,7 @@ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
-@import url(http://fonts.googleapis.com/css?family=Cabin+Condensed:600);
+@import url(http://fonts.googleapis.com/css?family=Cabin+Condensed:500);
 
 body{
   overflow-x:hidden;
@@ -58,7 +58,7 @@ body{
   transform:rotate(45deg);
 }
 
-.ribbon a{
+.ribbon a, .ribbon a:active, .ribbon a:hover{
   display:block;
   padding:1px 0;
   height:24px;
@@ -69,7 +69,7 @@ body{
   text-decoration:none;
   font-family: 'Cabin Condensed', sans-serif;
   font-size:16px;
-  font-weight:600;
+  font-weight:500;
 
   border:1px solid rgba(255,255,255,0.3);
 

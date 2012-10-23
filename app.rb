@@ -1,28 +1,4 @@
-require 'gollum'
-
-module Preview
-  class Renderer
-
-    def self.types
-      @@types
-    end
-    @@types = YAML::load(File.open("config/markups.yml"))
-
-    @@wiki = Gollum::Wiki.new('.', {})
-    
-    def self.render type, data
-      if(type != :gfm)
-        filename = "no-file.#{@@types[type.to_s]['ext']}"
-        GitHub::Markup.render(filename, data)
-      else
-        page = @@wiki.preview_page("no-file", data, :markdown)
-        page.formatted_data
-      end
-    end
-
-  end
-end
-
+require ::File.dirname(__FILE__) +'/lib/preview/renderer'
 
 require 'sinatra'
 require 'sinatra/assetpack'
@@ -42,12 +18,8 @@ module Preview
     }
 
     get '/' do
-      #@markup = "" 
-      #@preview = "" 
-      #@types = []
-      #Renderer.types.keys.each do |key|
-      #  @types << [Renderer.types[key]['name'], key]
-      #end
+      @example_url = params[:example_url] || 'example.md';
+      @markup_type = params[:markup_type] || 'md';
       erb :index
     end
 

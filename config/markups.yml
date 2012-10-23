@@ -1,6 +1,9 @@
 gfm:
   ext:  'md'
   name: 'Github Flavored Markdown' 
+wp:
+  ext:  'wp'
+  name: 'WordPress Flavored Readme'
 markdown:
   ext:  'md'
   name: 'Simple Markdown'
