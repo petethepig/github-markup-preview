@@ -1,5 +1,5 @@
 GEM
-  remote: https://rubygems.org/
+  remote: http://rubygems.org/
   specs:
     POpen4 (0.1.4)
       Platform (>= 0.4.0)
@@ -47,6 +47,7 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
+    rake (10.0.2)
     rdoc (3.12)
       json (~> 1.4)
     rubypants (0.2.0)
@@ -82,6 +83,7 @@ DEPENDENCIES
   creole (~> 0.3.6)
   gollum
   org-ruby
+  rake
   rdoc (~> 3.6)
   sass
   sinatra
