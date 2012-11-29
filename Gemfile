@@ -1,5 +1,5 @@
-source 'https://rubygems.org'
-
+source 'http://rubygems.org'
+gem 'rake'
 gem 'sinatra'
 gem 'sinatra-assetpack', :require => 'sinatra/assetpack'
 
