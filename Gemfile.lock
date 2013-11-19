@@ -85,6 +85,7 @@ DEPENDENCIES
   org-ruby
   rake
   rdoc (~> 3.6)
+  rubypython (= 0.5.3)
   sass
   sinatra
   sinatra-assetpack

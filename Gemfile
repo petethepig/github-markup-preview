@@ -15,4 +15,4 @@ gem 'sass'
 
 gem 'yui-compressor', :require => 'yui/compressor'
 
-gem 'rubypython', '=0.5.1'
+gem 'rubypython', '=0.5.3'
