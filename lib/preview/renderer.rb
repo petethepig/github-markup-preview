@@ -1,27 +1,24 @@
 require ::File.dirname(__FILE__)+'/wordpress_readme_parser'
 
-require 'gollum'
 require 'yaml'
+
+require 'github/markup'
 
 module Preview
   class Renderer
 
-    def self.types
-      @@types
+    def types
+      @types ||= YAML::load(File.open("config/markups.yml"))
     end
-    @@types = YAML::load(File.open("config/markups.yml"))
 
-    @@wiki = Gollum::Wiki.new('.', {})
-    
-    def self.render type, data
+    def render type, data
       if(type == :gfm)
-        page = @@wiki.preview_page("no-file", data, :markdown)
-        page.formatted_data
+        GitHub::Markup.render("noname.markdown", data || '')
       elsif(type == :wp)
         data = WordpressReadmeParser.prerender data
-        GitHub::Markup.render("noname.md", data || '')
+        GitHub::Markup.render("noname.markdown", data || '')
       else
-        filename = "no-file.#{@@types[type.to_s]['ext']}"
+        filename = "no-file.#{types[type.to_s]['ext']}"
         GitHub::Markup.render(filename, data)
       end
     end
