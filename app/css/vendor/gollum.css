@@ -238,6 +238,11 @@ a.absent {
 .markdown-body blockquote>:last-child {
   margin-bottom: 0;
 }
+.markdown-body blockquote p {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
 .markdown-body table {
   padding: 0;
 }

@@ -72,6 +72,11 @@ var MarkupPreview=(function(){
 
     return {
         init:function(){
+            if(window.location.hash=="#wp"){
+                window.example_url ='wp-example.txt'; 
+                window.markup_type ='wp';
+                //window.location.hash = '';
+            }
             $("header .btn-group .btn").click(function(){
                 $("button.active").removeClass("active");
                 $(this).addClass("active")
@@ -88,7 +93,7 @@ var MarkupPreview=(function(){
                 $("textarea").val(StorageManager.get("data"));
             }else{ //first time visit
                 $.ajax({
-                    url: "./example.md",
+                    url: window.example_url || "./example.md",
                 }).success(function(data){
                     $("textarea").val(data);
                     resizeHandler();
@@ -104,6 +109,12 @@ var MarkupPreview=(function(){
                     }
                 });
                 update();
+            }else{
+                $("#type").children("option").each(function(){
+                    if($(this).val()==window.markup_type){
+                        $(this).attr("selected","selected");
+                    }
+                });
             }
             if(StorageManager.has("layout")){
                 $("#"+StorageManager.get("layout")).trigger("click")
