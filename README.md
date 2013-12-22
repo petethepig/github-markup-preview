@@ -9,7 +9,7 @@ This preview on the right side looks exactly the same as it would look like on G
 Refresh the page. Your markup stays here until you close the browser tab. Isn't that great?
 
 Supported formats are:
-* github flavored markup - **fully supported**
+* github flavored markup
 * simple markdown
 * rdoc
 * textile

@@ -15,4 +15,3 @@ gem "wikicloth", "=0.6.0"
 
 gem 'github-markup'
 
-gem 'rubypython', '=0.5.3'

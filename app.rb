@@ -1,8 +1,8 @@
 require 'sinatra'
 require 'sinatra/assetpack'
 
-require 'yaml'
 require 'github/markup'
+require 'redcarpet/compat'
 
 module Preview
 
@@ -66,18 +66,53 @@ module Preview
   end
 
   class Renderer
-    def types
-      @types ||= YAML::load(File.open("config/markups.yml"))
-    end
+    TYPES = {
+      markdown: {
+        ext: "md", 
+        name: "Simple Markdown"
+      }, 
+      wp: {
+        ext: "wp", 
+        name: "WordPress Flavored Readme"
+      }, 
+      rdoc: {
+        ext: "rdoc", 
+        name: "RDoc"
+      }, 
+      textile: {
+        ext: "textile", 
+        name: "Textile"
+      }, 
+      mediawiki: {
+        ext: "wiki", 
+        name: "MediaWiki"
+      }, 
+      gfm: {
+        ext: "md", 
+        name: "Github Flavored Markdown"
+      }, 
+      org: {
+        ext: "org", 
+        name: "Org"
+      }, 
+      creole: {
+        ext: "creole", 
+        name: "Creole"
+      }
+    }
 
     def render type, data
-      if(type == :gfm)
+      data ||= ""
+      case type
+      when :gfm
         GitHub::Markdown.render_gfm(data)
-      elsif(type == :wp)
+      when :wp
         data = WordpressReadmeParser.prerender data
-        GitHub::Markup.render("noname.markdown", data || '')
+        RedcarpetCompat.new(data).to_html
+      when :md
+        RedcarpetCompat.new(data).to_html
       else
-        filename = "no-file.#{types[type.to_s]['ext']}"
+        filename = "no-file.#{TYPES[type.to_sym][:ext]}"
         GitHub::Markup.render(filename, data)
       end
     end
