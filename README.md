@@ -25,3 +25,5 @@ Contact me on [GitHub](https://github.com/petethepig/)
 
 #### License
 MIT License - fork, modify and use however you want.
+
+[![Analytics](https://ga-beacon.appspot.com/UA-32704322-2/github-markup-preview/index)](https://github.com/igrigorik/ga-beacon)
